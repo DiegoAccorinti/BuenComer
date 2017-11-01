@@ -5,7 +5,8 @@
 
 
 import pilasengine, os, random
-from arrastrableFicha import *
+from arrastrableFicha import ArrastrableFicha
+from OpenGL import GL
 
 pilas = pilasengine.iniciar(ancho=900, alto=550, titulo='BuenComer')
 
@@ -24,8 +25,6 @@ url_fuente_puntos = ruta + '/acknowtt.ttf'
 
 #vinculo la habilidad nueva
 pilas.habilidades.vincular(ArrastrableFicha)
-
-
 
 class PantallaJuego(pilasengine.escenas.Escena):
 
@@ -150,7 +149,7 @@ class PantallaJuego(pilasengine.escenas.Escena):
 
                 tablero.append(alimento)
 
-                alimento.aprender(pilas.habilidades.Arrastrable)
+                alimento.aprender(pilas.habilidades.ArrastrableFicha)
                 alimento.radio_de_colision = 30
 
                 alimento.id = contador -1 # Casillero en el que está inicialmente
